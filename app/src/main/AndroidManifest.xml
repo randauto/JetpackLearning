@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LearningJetpack">
-        <activity android:name=".MaterialButtonActivity"></activity>
+        <activity android:name=".appbar.TopAppBarActivity"></activity>
+        <activity android:name=".image.ImageActivity" />
+        <activity android:name=".MaterialButtonActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
