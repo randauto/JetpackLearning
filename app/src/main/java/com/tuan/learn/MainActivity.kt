@@ -17,12 +17,26 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.tuan.learn.appbar.TopAppBarActivity
 import com.tuan.learn.customcomponent.MyCustomComponent.MyButtonComponent
+import com.tuan.learn.databinding.ActivityMainBinding
 import com.tuan.learn.image.ImageActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root.apply { setContentView(this) }
+        binding.btnMaterialButton.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Kaka", Toast.LENGTH_SHORT).show()
+        }
+        binding.btnMaterialButton.text = "OKOKOKOK"
+
+    }
+
+    fun callMethodJetpackComponent() {
         setContent {
             ScrollableColumn(contentPadding = PaddingValues(8f.dp, 0f.dp, 0f.dp, 8f.dp)) {
                 val context = ContextAmbient.current
