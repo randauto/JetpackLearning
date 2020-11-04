@@ -19,6 +19,7 @@ import com.tuan.learn.appbar.TopAppBarActivity
 import com.tuan.learn.customcomponent.MyCustomComponent.MyButtonComponent
 import com.tuan.learn.databinding.ActivityMainBinding
 import com.tuan.learn.image.ImageActivity
+import com.tuan.learn.requestnetwork.RequestNetworkActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this@MainActivity, "Kaka", Toast.LENGTH_SHORT).show()
         }
         binding.btnMaterialButton.text = "OKOKOKOK"
+
+        callMethodJetpackComponent()
 
     }
 
@@ -78,6 +81,15 @@ class MainActivity : AppCompatActivity() {
                     buttonText = "Top Appbar",
                     afterClick = {
                         val intent = Intent(context, TopAppBarActivity::class.java)
+                        startActivity(intent)
+                    }
+                )
+                Divider(color = Color.Green)
+                MyButtonComponent(
+                    context = this@MainActivity,
+                    buttonText = "Request Retrofit Rx Network",
+                    afterClick = {
+                        val intent = Intent(context, RequestNetworkActivity::class.java)
                         startActivity(intent)
                     }
                 )
